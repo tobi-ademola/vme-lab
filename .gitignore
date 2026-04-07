@@ -1,0 +1,38 @@
+# Practice / scratch files
+data/raw/heat_conduction/gen.py
+
+# Test cases (personal learning scripts)
+data/raw/heat_conduction/test/
+
+# Generated output
+data/raw/heat_conduction/output/
+
+# Datasets (large binary files — regenerate from generate.py)
+**/*.npz
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Node / frontend
+node_modules/
+dist/
+.next/
+
+# ParaView session files
+*.btr
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
