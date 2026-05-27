@@ -94,7 +94,9 @@ def check_analytical_convergence() -> bool:
     Test parameters
     ---------------
     k      = 1.0 W/m·K
-    ρcₚ    = 1.0 J/m³·K   → α = k/ρcₚ = 1.0 m²/s  (fast diffusion, easy to verify)
+    ρcₚ    = 100.0 J/m³·K  → α = k/ρcₚ = 0.01 m²/s  (slow enough that the exact
+                             solution retains ~82 % of its amplitude at t=T_end,
+                             keeping the relative-error denominator non-trivial)
     Q      = 0.0 W/m³      (no source — keeps the PDE linear with known solution)
     T_left = T_right = 0 K (homogeneous BCs — matched to the analytical solution)
 
@@ -109,9 +111,9 @@ def check_analytical_convergence() -> bool:
     print("\n--- Check 1: Analytical convergence ---")
 
     k_val  = 1.0
-    rho_cp = 1.0
-    alpha  = k_val / rho_cp
-    Q_val  = 0.0
+    rho_cp = 100.0          # α = k/ρcₚ = 0.01 m²/s — slow enough that the exact
+    alpha  = k_val / rho_cp # solution retains ~82% of its amplitude at t=T_end,
+    Q_val  = 0.0            # keeping the relative-error denominator well away from zero
     T_bc   = 0.0   # homogeneous Dirichlet
 
     # Sine IC: T(x,y,0) = sin(πx)
